@@ -1,13 +1,12 @@
 Summary:	Utilities for configuring the linux ethernet bridge
 Summary(pl):	U¿ytki przeznaczone do konfiguracji linux ethernet bridge
 Name:		bridge-utils
-Version:	0.9.5
-Release:	1
+Version:	0.9.6
+Release:	0.9
 License:	GPL
 Group:		Networking/Admin
 Source0:	http://bridge.sourceforge.net/bridge-utils/%{name}-%{version}.tar.gz
-Patch0:		%{name}-opt.patch
-Patch1:		%{name}-rootonly.patch
+Patch0:		%{name}-rootonly.patch
 URL:		http://bridge.sourceforge.net/
 BuildRequires:	kernel-headers(bridging)
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -47,11 +46,14 @@ bridge.
 
 %prep
 %setup -q -n %{name}
-%patch0 -p1
-%patch1 -p1
+#%patch0 -p1
 
 %build
-%{__make} all OPT="%{rpmcflags}" CC="%{__cc}"
+rm -f missing
+%{__aclocal}
+%{__autoconf}
+%configure
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
