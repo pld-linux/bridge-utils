@@ -31,8 +31,8 @@ przy³±czone po jednej stronie widz± hosty z drugiej strony
 bezpo¶rednio.
 
 %package devel
-Summary:	Libraries for the linux ethernet bridge programs.
-Summary(pl):	Biblioteki u¿ywane do sterowania linuksowym bridge.
+Summary:	Libraries for the linux ethernet bridge programs
+Summary(pl):	Biblioteki u¿ywane do sterowania linuksowym bridge
 Group:		Development/Libraries
 
 %description devel
