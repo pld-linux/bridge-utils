@@ -2,7 +2,7 @@ Summary:	Utilities for configuring the linux ethernet bridge
 Summary(pl):	U¿ytki przeznaczone do konfiguracji linux ethernet bridge
 Name:		bridge-utils
 Version:	0.9.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		Networking/Admin
 Group(de):	Netzwerkwesen/Administration
@@ -54,20 +54,20 @@ bridge.
 %patch1 -p1
 
 %build
-%{__make} OPT="$RPM_OPT_FLAGS" all
+%{__make} all OPT="%{?debug:-O0 -g}%{!?debug:$RPM_OPT_FLAGS}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_sbindir},%{_libdir},%{_includedir}} \
 	$RPM_BUILD_ROOT%{_mandir}/man8
 
-install -s brctl/brctl		$RPM_BUILD_ROOT%{_sbindir}/
-#install -s brctl/brctld		$RPM_BUILD_ROOT%{_sbindir}/
+install brctl/brctl		$RPM_BUILD_ROOT%{_sbindir}
+#install brctl/brctld		$RPM_BUILD_ROOT%{_sbindir}
 install doc/*.8			$RPM_BUILD_ROOT%{_mandir}/man8
-install libbridge/libbridge.a	$RPM_BUILD_ROOT%{_libdir}/
-install libbridge/libbridge.h	$RPM_BUILD_ROOT%{_includedir}/
-	
-gzip -9nf doc/*	$RPM_BUILD_ROOT%{_mandir}/man8/*
+install libbridge/libbridge.a	$RPM_BUILD_ROOT%{_libdir}
+install libbridge/libbridge.h	$RPM_BUILD_ROOT%{_includedir}
+
+gzip -9nf doc/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
