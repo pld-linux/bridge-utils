@@ -1,12 +1,12 @@
 Summary:	Utilities for configuring the linux ethernet bridge
 Summary(pl):	U¿ytki przeznaczone do konfiguracji linux ethernet bridge
 Name:		bridge-utils
-Version:	1.0.2
+Version:	1.0.4
 Release:	0.1
 License:	GPL
 Group:		Networking/Admin
 Source0:	http://dl.sourceforge.net/bridge/%{name}-%{version}.tar.gz
-# Source0-md5:	cbff660d83d24815e9a5bcf890ce22f1
+# Source0-md5:	d41d8cd98f00b204e9800998ecf8427e
 URL:		http://bridge.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
