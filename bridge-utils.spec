@@ -1,7 +1,7 @@
 Summary:	Utilities for configuring the linux ethernet bridge.
 Summary(pl):	U¿ytki przeznaczone do konfiguracji linux ethernet bridge.
 Name:		bridge-utils
-Version:	0.9.0
+Version:	0.9.1
 Release:	1
 License:	GPL
 Group:		Networking/Admin
@@ -55,14 +55,14 @@ bridge.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_sbindir},{_libdir},%{_includedir}} \
+install -d $RPM_BUILD_ROOT{%{_sbindir},%{_libdir},%{_includedir}} \
 	$RPM_BUILD_ROOT%{_mandir}/man8
 
 install -s brctl/brctl		$RPM_BUILD_ROOT%{_sbindir}/
 #install -s brctl/brctld		$RPM_BUILD_ROOT%{_sbindir}/
 install doc/*.8			$RPM_BUILD_ROOT%{_mandir}/man8
-install libbridge/libbridge.a	$RPM_BUILD_ROOT%{_libdir}
-install libbridge/libbridge.h	$RPM_BUILD_ROOT%{_includedir}
+install libbridge/libbridge.a	$RPM_BUILD_ROOT%{_libdir}/
+install libbridge/libbridge.h	$RPM_BUILD_ROOT%{_includedir}/
 	
 gzip -9nf doc/*	$RPM_BUILD_ROOT%{_mandir}/man8/*
 
