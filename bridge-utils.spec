@@ -1,14 +1,15 @@
-Summary:	Utilities for configuring the linux ethernet bridge.
-Summary(pl):	U¿ytki przeznaczone do konfiguracji linux ethernet bridge.
+Summary:	Utilities for configuring the linux ethernet bridge
+Summary(pl):	U¿ytki przeznaczone do konfiguracji linux ethernet bridge
 Name:		bridge-utils
 Version:	0.9.1
 Release:	1
 License:	GPL
 Group:		Networking/Admin
-Group(pl):	Sieciowe/Administracyjne
-Source0:	ftp://openrock.net/bridge/%{name}-%{version}.tar.gz
-Patch0:		bridge-utils-opt.patch
-Patch1:		bridge-utils-rootonly.patch
+Group(de):	Netzwerkwesen/Administration
+Group(pl):	Sieciowe/Administacyjne
+Source0:	ftp://openrock.net/bridge/bridge-utils/%{name}-%{version}.tar.gz
+Patch0:		%{name}-opt.patch
+Patch1:		%{name}-rootonly.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	brcfg
 
@@ -32,6 +33,7 @@ stronie widz± hosty z drugiej strony bezpo¶rednio.
 Summary:	Libraries for the linux ethernet bridge programs.
 Summary(pl):	Biblioteki u¿ywane do sterowania linuxowym bridge.
 Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
 
