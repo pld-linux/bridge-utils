@@ -64,14 +64,12 @@ install doc/*.8			$RPM_BUILD_ROOT%{_mandir}/man8
 install libbridge/libbridge.a	$RPM_BUILD_ROOT%{_libdir}
 install libbridge/libbridge.h	$RPM_BUILD_ROOT%{_includedir}
 
-cd doc && gzip -9nf FAQ FIREWALL HOWTO SMPNOTES WISHLIST
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc doc/*.gz
+%doc doc/{FAQ,FIREWALL,HOWTO,SMPNOTES,WISHLIST}
 %attr(755,root,root) %{_sbindir}/*
 %{_mandir}/man?/*
 
