@@ -10,8 +10,9 @@ Source0:	http://dl.sourceforge.net/bridge/%{name}-%{version}.tar.gz
 URL:		http://bridge.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	linux-libc-headers >= 7:2.6.7
 BuildRequires:	sysfsutils-devel
-BuildRequires:	kernel-headers(bridging)
+BuildRequires:	sed >= 4.0
 Obsoletes:	brcfg
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -50,14 +51,14 @@ bridge.
 %prep
 %setup -q
 
+rm -rf autom4te.cache
+
 %build
 cp -f /usr/share/automake/config.sub .
 %{__aclocal}
 %{__autoconf}
 %configure
-chmod u+w brctl/brctl.h libbridge/libbridge_private.h
-echo "#include <linux/errno.h>" >> brctl/brctl.h
-echo "#include <linux/errno.h>" >> libbridge/config.h
+chmod u+w libbridge/libbridge_private.h
 sed -i -e 's#sysfs/libsysfs.h#libsysfs.h#g' libbridge/libbridge_private.h
 sed -i -e 's#KERNEL_HEADERS=.*#KERNEL_HEADERS=#g' */Makefile*
 %{__make} \
@@ -78,7 +79,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc doc/{FAQ,FIREWALL,HOWTO,SMPNOTES,WISHLIST}
 %attr(755,root,root) %{_sbindir}/*
-%{_mandir}/man?/*
+%{_mandir}/man8/*
 
 %files devel
 %defattr(644,root,root,755)
