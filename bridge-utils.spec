@@ -1,16 +1,16 @@
 Summary:	Utilities for configuring the linux ethernet bridge
 Summary(pl):	U¿ytki przeznaczone do konfiguracji linux ethernet bridge
 Name:		bridge-utils
-Version:	0.9.6
-Release:	1
+Version:	1.0.2
+Release:	0.1
 License:	GPL
 Group:		Networking/Admin
-Source0:	http://bridge.sourceforge.net/bridge-utils/%{name}-%{version}.tar.gz
-# Source0-md5:	c45ede7ebd2fa762b4093f62ff582fd0
-Patch0:		%{name}-rootonly.patch
+Source0:	http://dl.sourceforge.net/bridge/%{name}-%{version}.tar.gz
+# Source0-md5:	cbff660d83d24815e9a5bcf890ce22f1
 URL:		http://bridge.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	sysfsutils-devel
 BuildRequires:	kernel-headers(bridging)
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	brcfg
@@ -48,26 +48,28 @@ programów u¿ywaj±cych 'libbridge' - interfejs do linuksowego ethernet
 bridge.
 
 %prep
-%setup -q -n %{name}
-#%patch0 -p1
+%setup -q
 
 %build
 rm -f missing
 %{__aclocal}
 %{__autoconf}
 %configure
-%{__make}
+chmod u+w brctl/brctl.h libbridge/libbridge_private.h
+echo "#include <linux/errno.h>" >> brctl/brctl.h
+echo "#include <linux/errno.h>" >> libbridge/config.h
+sed -i -e 's#sysfs/libsysfs.h#libsysfs.h#g' libbridge/libbridge_private.h
+sed -i -e 's#KERNEL_HEADERS=.*#KERNEL_HEADERS=#g' */Makefile*
+%{__make} \
+	KERNEL_HEADERS=""
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_sbindir},%{_libdir},%{_includedir}} \
 	$RPM_BUILD_ROOT%{_mandir}/man8
 
-install brctl/brctl		$RPM_BUILD_ROOT%{_sbindir}
-#install brctl/brctld		$RPM_BUILD_ROOT%{_sbindir}
-install doc/*.8			$RPM_BUILD_ROOT%{_mandir}/man8
-install libbridge/libbridge.a	$RPM_BUILD_ROOT%{_libdir}
-install libbridge/libbridge.h	$RPM_BUILD_ROOT%{_includedir}
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
