@@ -5,15 +5,15 @@ Version:	1.0.4
 Release:	1
 License:	GPL
 Group:		Networking/Admin
-Source0:	http://osdn.dl.sourceforge.net/sourceforge/bridge/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/bridge/%{name}-%{version}.tar.gz
 # Source0-md5:	2cab42847c4654e58c4d0ba114bfe2c2
 URL:		http://bridge.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	sysfsutils-devel
 BuildRequires:	kernel-headers(bridging)
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	brcfg
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sbindir	/sbin
 
@@ -26,7 +26,7 @@ ethernet devices directly.
 
 %description -l pl
 Ten pakiet zawiera narzêdzia przeznaczone do konfigurowania
-linuksowego ethernet bridge (inteligentny switch). Linux ethernet
+linuksowego ethernet bridge (inteligentnego switcha). Linux ethernet
 bridge mo¿e byæ u¿yty do ³±czenia kilku ethernetowych interfejsów
 sieciowych w jeden. Po³±czenie jest w pe³ni prze¼roczyste; hosty
 przy³±czone po jednej stronie widz± hosty z drugiej strony
@@ -44,7 +44,7 @@ kernel ethernet bridge.
 
 %description devel -l pl
 Ten pakiet zawiera pliki nag³ówkowe i bibliotekê konieczn± do rozwoju
-programów u¿ywaj±cych 'libbridge' - interfejs do linuksowego ethernet
+programów u¿ywaj±cych libbridge - interfejsu do linuksowego ethernet
 bridge.
 
 %prep
