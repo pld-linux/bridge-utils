@@ -25,7 +25,7 @@ connected to one ethernet device see hosts connected to the other
 ethernet devices directly.
 
 %description -l pl
-Ten pakiet zawiera narzêdzia przeznaczone do konfigurowania linuxowego
+Ten pakiet zawiera narzêdzia przeznaczone do konfigurowania linuksowego
 ethernet bridge (inteligentny switch). Linux ethernet bridge mo¿e byæ
 u¿yty do ³±czenia kilku ethernetowych interfejsów sieciowych w jeden.
 Po³±czenie jest w pe³ni prze¼roczyste; hosty przy³±czone po jednej
@@ -33,7 +33,7 @@ stronie widz± hosty z drugiej strony bezpo¶rednio.
 
 %package devel
 Summary:	Libraries for the linux ethernet bridge programs.
-Summary(pl):	Biblioteki u¿ywane do sterowania linuxowym bridge.
+Summary(pl):	Biblioteki u¿ywane do sterowania linuksowym bridge.
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
 Group(fr):	Development/Librairies
@@ -46,7 +46,7 @@ kernel ethernet bridge.
 
 %description devel -l pl
 Ten pakiet zawiera pliki nag³ówkowe i bibliotekê konieczn± do rozwoju
-programów u¿ywaj±cych 'libbridge' - interfejs do linuxowego ethernet
+programów u¿ywaj±cych 'libbridge' - interfejs do linuksowego ethernet
 bridge.
 
 %prep
