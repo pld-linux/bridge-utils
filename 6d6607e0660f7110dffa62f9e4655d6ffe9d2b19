@@ -1,0 +1,5 @@
+- updated to 1.0.4.
+
+  released a new version of bridge utilities that supports both
+  new 2.6.7 interface and older 2.6/2.4 releases.
+  The only changes since 1.0 were internal to fix compatibility issues.
