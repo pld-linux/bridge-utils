@@ -9,7 +9,7 @@ Group(pl):	Sieciowe/Administracja
 Source0:	ftp://openrock.net/bridge/%{name}-%{version}.tar.gz
 Patch0:		bridge-utils-opt.patch
 Patch1:		bridge-utils-rootonly.patch
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	brcfg
 
 %define		_sbindir	/sbin
