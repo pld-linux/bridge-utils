@@ -5,8 +5,8 @@ Version:	1.0.4
 Release:	0.1
 License:	GPL
 Group:		Networking/Admin
-Source0:	http://dl.sourceforge.net/bridge/%{name}-%{version}.tar.gz
-# Source0-md5:	d41d8cd98f00b204e9800998ecf8427e
+Source0:	http://osdn.dl.sourceforge.net/sourceforge/bridge/%{name}-%{version}.tar.gz
+# Source0-md5:	2cab42847c4654e58c4d0ba114bfe2c2
 URL:		http://bridge.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
