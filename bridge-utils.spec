@@ -10,10 +10,10 @@ Group(pl):	Sieciowe/Administracyjne
 Source0:	http://bridge.sourceforge.net/bridge-utils/%{name}-%{version}.tar.gz
 Patch0:		%{name}-opt.patch
 Patch1:		%{name}-rootonly.patch
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Obsoletes:	brcfg
 URL:		http://bridge.sourceforge.net/
 BuildRequires:	kernel-headers(bridging)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Obsoletes:	brcfg
 
 %define		_sbindir	/sbin
 
