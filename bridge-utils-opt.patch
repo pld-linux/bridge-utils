@@ -19,19 +19,19 @@ diff -uNr bridge.org/brctl/Makefile bridge/brctl/Makefile
  
  brctl.o:		brctl.c brctl.h
 -			gcc -I../libbridge -Wall -c -g -o brctl.o brctl.c
-+			gcc -I../libbridge -Wall -c -g $(OPT) -o brctl.o brctl.c
++			gcc -I../libbridge -Wall -c $(OPT) -o brctl.o brctl.c
  
  brctld.o:		brctld.c brctl.h
 -			gcc -I../libbridge -Wall -c -g -o brctld.o brctld.c
-+			gcc -I../libbridge -Wall -c -g $(OPT) -o brctld.o brctld.c
++			gcc -I../libbridge -Wall -c $(OPT) -o brctld.o brctld.c
  
  brctl_cmd.o:		brctl_cmd.c brctl.h
 -			gcc -I../libbridge -Wall -c -g -o brctl_cmd.o brctl_cmd.c
-+			gcc -I../libbridge -Wall -c -g $(OPT) -o brctl_cmd.o brctl_cmd.c
++			gcc -I../libbridge -Wall -c $(OPT) -o brctl_cmd.o brctl_cmd.c
  
  brctl_disp.o:		brctl_disp.c brctl.h
 -			gcc -I../libbridge -Wall -c -g -o brctl_disp.o brctl_disp.c
-+			gcc -I../libbridge -Wall -c -g $(OPT) -o brctl_disp.o brctl_disp.c
++			gcc -I../libbridge -Wall -c $(OPT) -o brctl_disp.o brctl_disp.c
 diff -uNr bridge.org/libbridge/Makefile bridge/libbridge/Makefile
 --- bridge.org/libbridge/Makefile	Wed Apr  5 00:14:36 2000
 +++ bridge/libbridge/Makefile	Thu Sep 21 15:09:43 2000
@@ -68,8 +68,8 @@ diff -uNr bridge.org/misc/Makefile bridge/misc/Makefile
  
  bidi:		bidi.c
 -		gcc -Wall -g -o bidi bidi.c
-+		gcc -Wall -g $(OPT) -o bidi bidi.c
++		gcc -Wall $(OPT) -o bidi bidi.c
  
  tap:		tap.c
 -		gcc -Wall -g -o tap tap.c
-+		gcc -Wall -g $(OPT) -o tap tap.c
++		gcc -Wall $(OPT) -o tap tap.c
