@@ -5,7 +5,7 @@ Version:	0.9.0
 Release:	1
 License:	GPL
 Group:		Networking/Admin
-Group(pl):	Sieciowe/Administracja
+Group(pl):	Sieciowe/Administracyjne
 Source0:	ftp://openrock.net/bridge/%{name}-%{version}.tar.gz
 Patch0:		bridge-utils-opt.patch
 Patch1:		bridge-utils-rootonly.patch
