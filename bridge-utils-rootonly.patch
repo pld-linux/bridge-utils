@@ -1,0 +1,15 @@
+diff -urN bridge.org/brctl/brctld.c bridge/brctl/brctld.c
+--- bridge.org/brctl/brctld.c	Tue Feb 22 00:26:59 2000
++++ bridge/brctl/brctld.c	Tue Feb 22 00:51:15 2000
+@@ -163,6 +163,11 @@
+ 	int sock;
+ 	int x;
+ 
++	if (getuid() != 0) {
++		fprintf(stderr, "must be run as root...\n");
++		return 1;
++	}
++		
+ 	if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
+ 		perror("socket");
+ 		return 1;
