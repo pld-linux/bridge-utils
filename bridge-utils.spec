@@ -5,8 +5,6 @@ Version:	0.9.5
 Release:	1
 License:	GPL
 Group:		Networking/Admin
-Group(de):	Netzwerkwesen/Administration
-Group(pl):	Sieciowe/Administracyjne
 Source0:	http://bridge.sourceforge.net/bridge-utils/%{name}-%{version}.tar.gz
 Patch0:		%{name}-opt.patch
 Patch1:		%{name}-rootonly.patch
@@ -36,13 +34,6 @@ bezpo╤rednio.
 Summary:	Libraries for the linux ethernet bridge programs.
 Summary(pl):	Biblioteki u©ywane do sterowania linuksowym bridge.
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 
 %description devel
 This package contains the header and object files necessary for
