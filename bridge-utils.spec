@@ -12,6 +12,7 @@ Patch0:		%{name}-opt.patch
 Patch1:		%{name}-rootonly.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	brcfg
+BuildRequires:	kernel-headers(bridging)
 
 %define		_sbindir	/sbin
 
