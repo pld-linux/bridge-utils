@@ -9,6 +9,8 @@ Source0:	http://bridge.sourceforge.net/bridge-utils/%{name}-%{version}.tar.gz
 # Source0-md5:	c45ede7ebd2fa762b4093f62ff582fd0
 Patch0:		%{name}-rootonly.patch
 URL:		http://bridge.sourceforge.net/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	kernel-headers(bridging)
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	brcfg
