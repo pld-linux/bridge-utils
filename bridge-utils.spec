@@ -1,5 +1,5 @@
-Summary:	Utilities for configuring the linux ethernet bridge
-Summary(pl):	U¿ytki przeznaczone do konfiguracji linux ethernet bridge
+Summary:	Utilities for configuring the Linux ethernet bridge
+Summary(pl):	Narzêdzia przeznaczone do konfiguracji linuksowego ethernet bridge
 Name:		bridge-utils
 Version:	1.0.4
 Release:	1
@@ -18,8 +18,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_sbindir	/sbin
 
 %description
-This package contains utilities for configuring the linux ethernet
-bridge. The linux ethernet bridge can be used for connecting multiple
+This package contains utilities for configuring the Linux ethernet
+bridge. The Linux ethernet bridge can be used for connecting multiple
 ethernet devices together. The connecting is fully transparent: hosts
 connected to one ethernet device see hosts connected to the other
 ethernet devices directly.
@@ -51,7 +51,6 @@ bridge.
 %setup -q
 
 %build
-rm -f missing
 cp -f /usr/share/automake/config.sub .
 %{__aclocal}
 %{__autoconf}
