@@ -54,7 +54,7 @@ bridge.
 %patch1 -p1
 
 %build
-%{__make} all OPT="%{?debug:-O0 -g}%{!?debug:$RPM_OPT_FLAGS}"
+%{__make} all OPT="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
