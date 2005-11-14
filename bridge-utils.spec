@@ -29,7 +29,7 @@ ethernet devices directly.
 Ten pakiet zawiera narzêdzia przeznaczone do konfigurowania
 linuksowego ethernet bridge (inteligentnego switcha). Linux ethernet
 bridge mo¿e byæ u¿yty do ³±czenia kilku ethernetowych interfejsów
-sieciowych w jeden. Po³±czenie jest w pe³ni prze¼roczyste; hosty
+sieciowych w jeden. Po³±czenie jest w pe³ni przezroczyste; hosty
 przy³±czone po jednej stronie widz± hosty z drugiej strony
 bezpo¶rednio.
 
