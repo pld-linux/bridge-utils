@@ -7,7 +7,7 @@ License:	GPL
 Group:		Networking/Admin
 Source0:	http://dl.sourceforge.net/bridge/%{name}-%{version}.tar.gz
 # Source0-md5:	43bbd2a67b59cac3e15d545f8b51df68
-URL:		http://bridge.sourceforge.net/
+URL:		http://linux-net.osdl.org/index.php/Bridge
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	linux-libc-headers >= 7:2.6.7
