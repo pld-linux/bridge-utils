@@ -11,7 +11,7 @@ URL:		http://linux-net.osdl.org/index.php/Bridge
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	linux-libc-headers >= 7:2.6.7
-BuildRequires:	sysfsutils-devel
+BuildRequires:	sysfsutils-devel >= 1.3.0-3
 BuildRequires:	sed >= 4.0
 Obsoletes:	brcfg
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -54,14 +54,13 @@ bridge.
 rm -rf autom4te.cache
 
 %build
-cp -f /usr/share/automake/config.sub .
+cp -f /usr/share/automake/{config.*,missing} .
 %{__aclocal}
 %{__autoconf}
 %configure
-chmod u+w libbridge/libbridge_private.h
-sed -i -e 's#sysfs/libsysfs.h#libsysfs.h#g' libbridge/libbridge_private.h
 sed -i -e 's#KERNEL_HEADERS=.*#KERNEL_HEADERS=#g' */Makefile*
 %{__make} \
+	CFLAGS="%{rpmcflags} -Wall" \
 	KERNEL_HEADERS=""
 
 %install
