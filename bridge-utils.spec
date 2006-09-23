@@ -1,17 +1,16 @@
 Summary:	Utilities for configuring the Linux ethernet bridge
 Summary(pl):	Narzêdzia przeznaczone do konfiguracji linuksowego ethernet bridge
 Name:		bridge-utils
-Version:	1.1
+Version:	1.2
 Release:	1
 License:	GPL
 Group:		Networking/Admin
 Source0:	http://dl.sourceforge.net/bridge/%{name}-%{version}.tar.gz
-# Source0-md5:	43bbd2a67b59cac3e15d545f8b51df68
+# Source0-md5:	1e6cff57ac90d7ab984d9512fdd9f2dd
 URL:		http://linux-net.osdl.org/index.php/Bridge
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	linux-libc-headers >= 7:2.6.7
-BuildRequires:	sysfsutils-devel >= 1.3.0-3
 BuildRequires:	sed >= 4.0
 Obsoletes:	brcfg
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -76,7 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc doc/{FAQ,FIREWALL,HOWTO,SMPNOTES,WISHLIST}
+%doc AUTHORS ChangeLog THANKS TODO doc/{FAQ,FIREWALL,HOWTO,SMPNOTES,WISHLIST}
 %attr(755,root,root) %{_sbindir}/*
 %{_mandir}/man8/*
 
