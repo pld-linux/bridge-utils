@@ -1,5 +1,5 @@
 Summary:	Utilities for configuring the Linux ethernet bridge
-Summary(pl.UTF-8):   Narzędzia przeznaczone do konfiguracji linuksowego ethernet bridge
+Summary(pl.UTF-8):	Narzędzia przeznaczone do konfiguracji linuksowego ethernet bridge
 Name:		bridge-utils
 Version:	1.2
 Release:	1
@@ -34,7 +34,7 @@ bezpośrednio.
 
 %package devel
 Summary:	Libraries for the linux ethernet bridge programs
-Summary(pl.UTF-8):   Biblioteki używane do sterowania linuksowym bridge
+Summary(pl.UTF-8):	Biblioteki używane do sterowania linuksowym bridge
 Group:		Development/Libraries
 
 %description devel
