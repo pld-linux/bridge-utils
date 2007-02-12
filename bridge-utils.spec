@@ -1,5 +1,5 @@
 Summary:	Utilities for configuring the Linux ethernet bridge
-Summary(pl):	Narzêdzia przeznaczone do konfiguracji linuksowego ethernet bridge
+Summary(pl.UTF-8):   NarzÄ™dzia przeznaczone do konfiguracji linuksowego ethernet bridge
 Name:		bridge-utils
 Version:	1.2
 Release:	1
@@ -24,17 +24,17 @@ ethernet devices together. The connecting is fully transparent: hosts
 connected to one ethernet device see hosts connected to the other
 ethernet devices directly.
 
-%description -l pl
-Ten pakiet zawiera narzêdzia przeznaczone do konfigurowania
+%description -l pl.UTF-8
+Ten pakiet zawiera narzÄ™dzia przeznaczone do konfigurowania
 linuksowego ethernet bridge (inteligentnego switcha). Linux ethernet
-bridge mo¿e byæ u¿yty do ³±czenia kilku ethernetowych interfejsów
-sieciowych w jeden. Po³±czenie jest w pe³ni przezroczyste; hosty
-przy³±czone po jednej stronie widz± hosty z drugiej strony
-bezpo¶rednio.
+bridge moÅ¼e byÄ‡ uÅ¼yty do Å‚Ä…czenia kilku ethernetowych interfejsÃ³w
+sieciowych w jeden. PoÅ‚Ä…czenie jest w peÅ‚ni przezroczyste; hosty
+przyÅ‚Ä…czone po jednej stronie widzÄ… hosty z drugiej strony
+bezpoÅ›rednio.
 
 %package devel
 Summary:	Libraries for the linux ethernet bridge programs
-Summary(pl):	Biblioteki u¿ywane do sterowania linuksowym bridge
+Summary(pl.UTF-8):   Biblioteki uÅ¼ywane do sterowania linuksowym bridge
 Group:		Development/Libraries
 
 %description devel
@@ -42,9 +42,9 @@ This package contains the header and object files necessary for
 developing programs which use 'libbridge', the interface to the linux
 kernel ethernet bridge.
 
-%description devel -l pl
-Ten pakiet zawiera pliki nag³ówkowe i bibliotekê konieczn± do rozwoju
-programów u¿ywaj±cych libbridge - interfejsu do linuksowego ethernet
+%description devel -l pl.UTF-8
+Ten pakiet zawiera pliki nagÅ‚Ã³wkowe i bibliotekÄ™ koniecznÄ… do rozwoju
+programÃ³w uÅ¼ywajÄ…cych libbridge - interfejsu do linuksowego ethernet
 bridge.
 
 %prep
