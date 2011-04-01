@@ -1,12 +1,12 @@
 Summary:	Utilities for configuring the Linux ethernet bridge
 Summary(pl.UTF-8):	Narzędzia przeznaczone do konfiguracji linuksowego ethernet bridge
 Name:		bridge-utils
-Version:	1.4
+Version:	1.5
 Release:	1
 License:	GPL
 Group:		Networking/Admin
 Source0:	http://dl.sourceforge.net/bridge/%{name}-%{version}.tar.gz
-# Source0-md5:	0182fcac3a2b307113bbec34e5f1c673
+# Source0-md5:	ec7b381160b340648dede58c31bb2238
 URL:		http://linux-net.osdl.org/index.php/Bridge
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -56,11 +56,11 @@ rm -rf autom4te.cache
 cp -f /usr/share/automake/{config.*,missing} .
 %{__aclocal}
 %{__autoconf}
-%configure
-sed -i -e 's#KERNEL_HEADERS=.*#KERNEL_HEADERS=#g' */Makefile*
+%configure \
+	--with-linux-headers=%{_includedir}
+
 %{__make} \
-	CFLAGS="%{rpmcflags} -Wall" \
-	KERNEL_HEADERS=""
+	CFLAGS="%{rpmcflags} %{rpmcppflags} -Wall"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -69,6 +69,9 @@ install -d $RPM_BUILD_ROOT{%{_sbindir},%{_libdir},%{_includedir}} \
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+install libbridge/libbridge.h $RPM_BUILD_ROOT%{_includedir}
+install libbridge/libbridge.a $RPM_BUILD_ROOT%{_libdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
