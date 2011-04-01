@@ -3,9 +3,9 @@ Summary(pl.UTF-8):	Narzędzia przeznaczone do konfiguracji linuksowego ethernet 
 Name:		bridge-utils
 Version:	1.5
 Release:	1
-License:	GPL
+License:	GPL v2+
 Group:		Networking/Admin
-Source0:	http://dl.sourceforge.net/bridge/%{name}-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/bridge/%{name}-%{version}.tar.gz
 # Source0-md5:	ec7b381160b340648dede58c31bb2238
 URL:		http://linux-net.osdl.org/index.php/Bridge
 BuildRequires:	autoconf
@@ -50,8 +50,6 @@ bridge.
 %prep
 %setup -q
 
-rm -rf autom4te.cache
-
 %build
 cp -f /usr/share/automake/{config.*,missing} .
 %{__aclocal}
@@ -79,10 +77,10 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog THANKS TODO doc/{FAQ,FIREWALL,HOWTO,SMPNOTES,WISHLIST}
-%attr(755,root,root) %{_sbindir}/*
-%{_mandir}/man8/*
+%attr(755,root,root) %{_sbindir}/brctl
+%{_mandir}/man8/brctl.8*
 
 %files devel
 %defattr(644,root,root,755)
-%{_libdir}/*.a
-%{_includedir}/*.h
+%{_libdir}/libbridge.a
+%{_includedir}/libbridge.h
