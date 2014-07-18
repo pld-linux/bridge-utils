@@ -1,0 +1,31 @@
+diff -ur bridge-utils-1.5.orig/doc/brctl.8 bridge-utils-1.5/doc/brctl.8
+--- bridge-utils-1.5.orig/doc/brctl.8	2011-03-29 00:52:54.000000000 +0000
++++ bridge-utils-1.5/doc/brctl.8	2014-07-18 15:58:06.318000000 +0000
+@@ -89,17 +89,12 @@
+ .B brctl showmacs <brname>
+ shows a list of learned MAC addresses for this bridge.
+ 
+-.B brctl setageingtime <brname> <time>
++.B brctl setageing <brname> <time>
+ sets the ethernet (MAC) address ageing time, in seconds. After <time>
+ seconds of not having seen a frame coming from a certain address, the
+ bridge will time out (delete) that address from the Forwarding
+ DataBase (fdb).
+ 
+-.B brctl setgcint <brname> <time>
+-sets the garbage collection interval for the bridge <brname> to <time>
+-seconds. This means that the bridge will check the forwarding database
+-for timed out entries every <time> seconds.
+-
+ 
+ .SH SPANNING TREE PROTOCOL
+ Multiple ethernet bridges can work together to create even larger
+@@ -107,7 +102,7 @@
+ protocol. This protocol is used for finding the shortest path between
+ two ethernets, and for eliminating loops from the topology. As this
+ protocol is a standard, linux bridges will interwork properly with
+-other third party bridge products. Bridges communicate with eachother
++other third party bridge products. Bridges communicate with each other
+ by sending and receiving BPDUs (Bridge Protocol Data Units). These
+ BPDUs can be recognised by an ethernet destination address of
+ 01:80:c2:00:00:00.
