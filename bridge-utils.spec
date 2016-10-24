@@ -1,21 +1,22 @@
 Summary:	Utilities for configuring the Linux ethernet bridge
 Summary(pl.UTF-8):	Narzędzia przeznaczone do konfiguracji linuksowego ethernet bridge
 Name:		bridge-utils
-Version:	1.5
-Release:	3
+Version:	1.6
+Release:	1
 License:	GPL v2+
 Group:		Networking/Admin
-Source0:	http://downloads.sourceforge.net/bridge/%{name}-%{version}.tar.gz
-# Source0-md5:	ec7b381160b340648dede58c31bb2238
+Source0:	https://www.kernel.org/pub/linux/utils/net/bridge-utils/%{name}-%{version}.tar.xz
+# Source0-md5:	541ae1c50cc268056693608920e6c908
 Patch0:		debian.patch
 Patch1:		man.patch
-Patch2:		fail_on_error.patch
-Patch3:		build_fix.patch
+Patch2:		build_fix.patch
 URL:		http://www.linuxfoundation.org/collaborate/workgroups/networking/bridge
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	linux-libc-headers >= 7:2.6.7
 BuildRequires:	sed >= 4.0
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
 Obsoletes:	brcfg
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -56,7 +57,6 @@ bridge.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%patch3 -p1
 
 %build
 cp -f /usr/share/automake/{config.*,missing} .

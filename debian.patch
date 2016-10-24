@@ -9,18 +9,6 @@
  
  clean:
  	rm -f *.o brctl core
---- bridge-utils-1.5.orig/brctl/brctl.c
-+++ bridge-utils-1.5/brctl/brctl.c
-@@ -69,7 +69,8 @@
- 	argc -= optind;
- 	argv += optind;
- 	if ((cmd = command_lookup(*argv)) == NULL) {
--		fprintf(stderr, "never heard of command [%s]\n", argv[1]);
-+/* Debian bug #406907 */
-+		fprintf(stderr, "never heard of command [%s]\n", argv[0]);
- 		goto help;
- 	}
- 	
 --- bridge-utils-1.5.orig/libbridge/Makefile.in
 +++ bridge-utils-1.5/libbridge/Makefile.in
 @@ -5,8 +5,7 @@
@@ -43,34 +31,4 @@
  libbridge_compat.o:	libbridge_compat.c if_index.c
 -	$(CC) $(CFLAGS) -c libbridge_compat.c
 +	$(CC) $(CFLAGS) $(CPPFLAGS) -c libbridge_compat.c
- 
---- bridge-utils-1.5.orig/libbridge/libbridge_devif.c
-+++ bridge-utils-1.5/libbridge/libbridge_devif.c
-@@ -288,12 +288,16 @@
- 	char path[SYSFS_PATH_MAX];
- 	FILE *f;
- 
--	snprintf(path, SYSFS_PATH_MAX, SYSFS_CLASS_NET "%s/%s", bridge, name);
-+/* Debian bug #496491 */
-+	snprintf(path, SYSFS_PATH_MAX, SYSFS_CLASS_NET "%s/bridge/%s", bridge, name);
- 
- 	f = fopen(path, "w");
- 	if (f) {
- 		ret = fprintf(f, "%ld\n", value);
- 		fclose(f);
-+/* Debian bug #574363 */
-+		if (errno)
-+			ret=-1;
- 	} else {
- 		/* fallback to old ioctl */
- 		struct ifreq ifr;
-@@ -355,6 +359,9 @@
- 	if (f) {
- 		ret = fprintf(f, "%ld\n", value);
- 		fclose(f);
-+/* Debian bug #574363 */
-+		if (errno)
-+			ret=-1;
- 	} else {
- 		int index = get_portno(bridge, ifname);
  
