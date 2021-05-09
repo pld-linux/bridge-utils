@@ -9,19 +9,9 @@
  
  clean:
  	rm -f *.o brctl core
---- bridge-utils-1.5.orig/libbridge/Makefile.in
-+++ bridge-utils-1.5/libbridge/Makefile.in
-@@ -5,8 +5,7 @@
- RANLIB=@RANLIB@
- 
- CC=@CC@
--CFLAGS = -Wall -g $(KERNEL_HEADERS)
--
-+CFLAGS = -Wall -g $(KERNEL_HEADERS) @CFLAGS@
- prefix=@prefix@
- exec_prefix=@exec_prefix@
- includedir=@includedir@
-@@ -34,8 +33,8 @@
+--- bridge-utils-1.7.1/libbridge/Makefile.in.orig	2021-03-04 18:27:42.000000000 +0100
++++ bridge-utils-1.7.1/libbridge/Makefile.in	2021-05-08 22:34:34.021409124 +0200
+@@ -34,8 +34,8 @@
  	$(RANLIB) $@
  
  %.o: %.c libbridge.h libbridge_private.h
