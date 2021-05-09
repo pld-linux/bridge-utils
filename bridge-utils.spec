@@ -9,7 +9,6 @@ Source0:	https://www.kernel.org/pub/linux/utils/net/bridge-utils/%{name}-%{versi
 # Source0-md5:	3e1fee4dc22cac5457c2f6ffb990a518
 Patch0:		debian.patch
 Patch1:		man.patch
-Patch2:		build_fix.patch
 URL:		http://www.linuxfoundation.org/collaborate/workgroups/networking/bridge
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -56,7 +55,6 @@ bridge.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 %build
 cp -f /usr/share/automake/{config.*,missing} .
